@@ -4,7 +4,7 @@ from django.db import models
 
 
 class TEmployee(models.Model):
-    name = models.CharField(max_length=100)
+    emp_name = models.CharField(max_length=100)
     gender = models.CharField(max_length=10)
     company = models.ForeignKey(
         "MCompany", on_delete=models.CASCADE, blank=True, null=True
@@ -19,7 +19,7 @@ class TEmployee(models.Model):
 
 
 class MCompany(models.Model):
-    name = models.CharField(max_length=100)
+    comp_name = models.CharField(max_length=100)
     location = models.CharField(max_length=100)
 
 
@@ -28,7 +28,7 @@ class MCompany(models.Model):
 
 
 class MDepartment(models.Model):
-    name = models.CharField(max_length=100)
+    dept_name = models.CharField(max_length=100)
 
 
         
