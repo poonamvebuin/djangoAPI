@@ -4,9 +4,9 @@ from django.db import models
 
 
 class TEmployee(models.Model):
-    emp_name = models.CharField(max_length=100)
+    user_name = models.CharField(max_length=100)
     gender = models.CharField(max_length=10)
-    company = models.ForeignKey(
+    company_name = models.ForeignKey(
         "MCompany", on_delete=models.CASCADE, blank=True, null=True
     )
     department = models.ForeignKey(
@@ -19,8 +19,8 @@ class TEmployee(models.Model):
 
 
 class MCompany(models.Model):
-    comp_name = models.CharField(max_length=100)
-    location = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
+    comp_location = models.CharField(max_length=100)
 
 
     def __str__(self):
@@ -28,7 +28,7 @@ class MCompany(models.Model):
 
 
 class MDepartment(models.Model):
-    dept_name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
 
 
         
