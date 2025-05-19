@@ -6,7 +6,7 @@ from django.db import models
 class TEmployee(models.Model):
     user_name = models.CharField(max_length=100)
     gender = models.CharField(max_length=10)
-    company_name = models.ForeignKey(
+    company = models.ForeignKey(
         "MCompany", on_delete=models.CASCADE, blank=True, null=True
     )
     department = models.ForeignKey(
@@ -15,12 +15,12 @@ class TEmployee(models.Model):
 
         
     def __str__(self):
-        return str(self.name)
+        return str(self.id)
 
 
 class MCompany(models.Model):
     name = models.CharField(max_length=100)
-    comp_location = models.CharField(max_length=100)
+    location = models.CharField(max_length=100)
 
 
     def __str__(self):
